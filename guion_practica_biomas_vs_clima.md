@@ -1,7 +1,7 @@
 # Instrucciones para realizar la práctica denominada "relación entre los biomas y el clima"
 
 
-> + **_Versión_**: 2.1
+> + **_Versión_**: 2020-2021
 > + **_Asignatura (grado)_**: Ecología (Ciencias ambientales). Curso 2020-2021
 > + **_Autor_**: Curro Bonet-García (fjbonet@uco.es)
 > + **_Duración_**: 3 horas.
