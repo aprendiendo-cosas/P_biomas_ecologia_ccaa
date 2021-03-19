@@ -77,7 +77,7 @@ En definitiva, aquí tienes enlaces a todo el material que has de bajar:
 + [Mapa de precipitación.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/rain.tif)
 + [Mapa de temperaturas.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/temp.tif)
 + [Proyecto de QGIS.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/clima_vs_biomas.zip)
-+ [Lista de biomas.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/downloadable_files/lista_biomas.zip)
++ [Lista de biomas.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/lista_biomas.zip)
 
 
 
