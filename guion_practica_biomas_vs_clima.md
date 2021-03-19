@@ -23,7 +23,7 @@ Esta práctica tiene los siguientes objetivos operacionales y competenciales :
    
      
 
-Este documento contiene la misma información que [esta](https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/protocolo_biomas_vs_clima_v2020-2021.pptx) presentación, que se usará en clase como guía para la práctica. 
+Este documento contiene la misma información que [esta](https://github.com/aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/presentaciones/protocolo_biomas_vs_clima_v2020-2021.pptx) presentación, que se usará en clase como guía para la práctica. 
 
 
 <div style="page-break-after: always; break-after: page;"></div>
@@ -38,7 +38,7 @@ El mapa que ves a continuación muestra la distribución espacial de los biomas.
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/mapa_biomas.png" alt="biomes" style="zoom:75%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/mapa_biomas.png" alt="biomes" style="zoom:75%;" />
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Climate_influence_on_terrestrial_biome.svg/1920px-Climate_influence_on_terrestrial_biome.svg.png" alt="biomes" style="zoom:25%;" />
 
@@ -52,9 +52,9 @@ En definitiva, haremos algo parecido a lo que hace [esta](https://media.hhmi.org
 
 ## Material 
 Para lograr el objetivo que nos hemos planteado y construir la gráfica de Whittaker, usaremos los siguientes conjuntos de datos:
-+ Mapa de distribución de los principales biomas del mundo. Hay multitud de iniciativas que han cartografiado la distribución de los biomas a escala global. En este caso usaremos un mapa generado por una ONG llamada [RESOLVE](https://www.resolve.ngo/). [Aquí](https://ecoregions2017.appspot.com/) puedes ver esta información en un visor web. Y en [este](https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/biomas.zip) enlace puedes acceder a un archivo zip (**biomas.zip**) que contiene el mapa visible por un SIG. Tendrás que descargar el zip anterior para hacer la práctica. Este mapa está en formato *shapefile* ("fichero de formas"). Este tipo de ficheros son comúnmente utilizados en los SIG para representar información vectorial. [Aquí](https://en.wikipedia.org/wiki/Shapefile) puedes leer algo más sobre esto. Cada fichero de formas tiene al menos cuatro archivos con extensiones diversas (*.shx, .dbf, .shp, .sbn*)
-+ Mapa de distribución de la temperatura media anual a escala global (**temp.tif**). Este mapa se ha descargado de la web del proyecto [WORDCLIM](https://worldclim.org/data/index.html), cuyo objetivo es generar mapas de variables climáticas de todo el planeta. Para ello interpolan datos climáticos de miles de estaciones meteorológicas distribuidas por todo el planeta. El mapa con la temperatura media anual se puede descargar en [este](https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/temp.tif) enlace. Tendrás que descargarlo para hacer la práctica. Este mapa está en formato *.tif*. Se trata de un formato raster en el que la información se almacena mediante una malla de píxeles regular. Cada píxel tiene información sobre la temperatura media anual. Esta temperatura se expresa en décimas de grado Celsius.
-+ Mapa de precipitación total anual (**rain.tif**). Tiene el mismo origen que el anterior y se puede descargar en [este](https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/rain.tif) enlace. También es un archivo raster.
++ Mapa de distribución de los principales biomas del mundo. Hay multitud de iniciativas que han cartografiado la distribución de los biomas a escala global. En este caso usaremos un mapa generado por una ONG llamada [RESOLVE](https://www.resolve.ngo/). [Aquí](https://ecoregions2017.appspot.com/) puedes ver esta información en un visor web. Y en [este](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/biomas.zip) enlace puedes acceder a un archivo zip (**biomas.zip**) que contiene el mapa visible por un SIG. Tendrás que descargar el zip anterior para hacer la práctica. Este mapa está en formato *shapefile* ("fichero de formas"). Este tipo de ficheros son comúnmente utilizados en los SIG para representar información vectorial. [Aquí](https://en.wikipedia.org/wiki/Shapefile) puedes leer algo más sobre esto. Cada fichero de formas tiene al menos cuatro archivos con extensiones diversas (*.shx, .dbf, .shp, .sbn*)
++ Mapa de distribución de la temperatura media anual a escala global (**temp.tif**). Este mapa se ha descargado de la web del proyecto [WORDCLIM](https://worldclim.org/data/index.html), cuyo objetivo es generar mapas de variables climáticas de todo el planeta. Para ello interpolan datos climáticos de miles de estaciones meteorológicas distribuidas por todo el planeta. El mapa con la temperatura media anual se puede descargar en [este](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/temp.tif) enlace. Tendrás que descargarlo para hacer la práctica. Este mapa está en formato *.tif*. Se trata de un formato raster en el que la información se almacena mediante una malla de píxeles regular. Cada píxel tiene información sobre la temperatura media anual. Esta temperatura se expresa en décimas de grado Celsius.
++ Mapa de precipitación total anual (**rain.tif**). Tiene el mismo origen que el anterior y se puede descargar en [este](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/rain.tif) enlace. También es un archivo raster.
 
 Las fuentes de datos descritas hasta aquí se denominan con el término genérico de "capa" (*layer* en inglés). Son homólogas al concepto de mapa en papel al que estamos acostumbrados. Cada capa se almacena en uno o varios archivos digitales. Una capa no es más que una representación simplificada de la realidad. Hay dos formas básicas de representar esa realidad: capas raster y vectoriales. El siguiente esquema muestra las diferencias entre ambas concepciones.
 
@@ -66,8 +66,18 @@ Las fuentes de datos descritas hasta aquí se denominan con el término genéric
 
 
 
-+ Proyecto de QGIS (**clima_vs_biomas.qgs**). [QGIS](https://qgis.org/es/site) es un sistema de información geográfica de [código abierto](https://en.wikipedia.org/wiki/Open_source). En QGIS la información geográfica se muestra creando un "proyecto". Se trata de un conjunto de visualizaciones a capas de información geográfica. Dentro de un proyecto se pueden mostrar multitud de capas raster y vectoriales. Estos proyectos se almacenan en un archivo con extensión *.qgs*. En realidad no contienen la información geográfica, sino únicamente referencias a ésta. Los proyectos solo contienen instrucciones que indican dónde están las capas que han de ser representadas en el SIG. Por ejemplo: "ve a la ruta *d:/misdocs/archivos/rain.tif*" y representa esa capa en la pantalla con una paleta de colores del azul al rojo". Es decir, si envías a alguien por correo electrónico el proyecto de QGIS no le estarás enviando las capas, sino únicamente referencias a las mismas. Para facilitarte el manejo de la información geográfica, puedes descargar [este](https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/clima_vs_biomas.zip) proyecto de QGIS, que ya contiene una vista de las capas descritas anteriormente. Cuando lo descargues, deberás descomprimirlo en tu carpeta de trabajo.
-+ Tabla con la lista de biomas (**lista_biomas.txt**). Es una simple tabla con el código de cada bioma, su nombre y un color (expresado con una palabra). Este color es el que se usará para mostrar cada punto de la gráfica. De esta manera, todos los puntos que estén en el mismo bioma tendrán el mismo color. [Aquí](https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/lista_biomas.zip) tienes el enlace para descargar esta información. Encontrarás el archivo de texto cuando descomprimas el archivo *.zip.*
++ Proyecto de QGIS (**clima_vs_biomas.qgs**). [QGIS](https://qgis.org/es/site) es un sistema de información geográfica de [código abierto](https://en.wikipedia.org/wiki/Open_source). En QGIS la información geográfica se muestra creando un "proyecto". Se trata de un conjunto de visualizaciones a capas de información geográfica. Dentro de un proyecto se pueden mostrar multitud de capas raster y vectoriales. Estos proyectos se almacenan en un archivo con extensión *.qgs*. En realidad no contienen la información geográfica, sino únicamente referencias a ésta. Los proyectos solo contienen instrucciones que indican dónde están las capas que han de ser representadas en el SIG. Por ejemplo: "ve a la ruta *d:/misdocs/archivos/rain.tif*" y representa esa capa en la pantalla con una paleta de colores del azul al rojo". Es decir, si envías a alguien por correo electrónico el proyecto de QGIS no le estarás enviando las capas, sino únicamente referencias a las mismas. Para facilitarte el manejo de la información geográfica, puedes descargar [este](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/clima_vs_biomas.zip) proyecto de QGIS, que ya contiene una vista de las capas descritas anteriormente. Cuando lo descargues, deberás descomprimirlo en tu carpeta de trabajo.
++ Tabla con la lista de biomas (**lista_biomas.txt**). Es una simple tabla con el código de cada bioma, su nombre y un color (expresado con una palabra). Este color es el que se usará para mostrar cada punto de la gráfica. De esta manera, todos los puntos que estén en el mismo bioma tendrán el mismo color. [Aquí](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/downloadable_files/lista_biomas.zip) tienes el enlace para descargar esta información. Encontrarás el archivo de texto cuando descomprimas el archivo *.zip.*
+
+
+
+En definitiva, aquí tienes enlaces a todo el material que has de bajar:
+
++ [Mapa de biomas.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/biomas.zip)
++ [Mapa de precipitación.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/rain.tif)
++ [Mapa de temperaturas.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/temp.tif)
++ [Proyecto de QGIS.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/geoinfo/clima_vs_biomas.zip)
++ [Lista de biomas.](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/downloadable_files/lista_biomas.zip)
 
 
 
@@ -79,7 +89,7 @@ Para construir la gráfica deseada, seleccionaremos una serie de puntos en todo 
 
 La secuencia de pasos descrita brevemente en el párrafo anterior es lo que se denomina "[flujo de trabajo](https://en.wikipedia.org/wiki/Workflow)" (*workflow* en inglés). Se trata de una secuencia ordenada de acciones o pasos que se llevan a cabo de una manera sistemática para conseguir un objetivo concreto. El concepto de flujo de trabajo es muy habitual en ciencias como la ecología, en la que es necesario analizar multitud de datos para satisfacer un objetivo determinado. Es muy útil describir el flujo de trabajo, bien en modo texto (párrafo inicial de esta sección), o bien en modo gráfico, como puedes ver a continuación:
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/workflow_bioma_vs_clima.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/workflow_bioma_vs_clima.png" alt="biomes" style="zoom:55%;" />
 
 Los números morados que aparecen en la imagen superior son los distintos pasos del flujo de trabajo que aplicaremos. Los rombos se corresponden con procesos y análisis que aplicaremos sobre los datos (representados por rectángulos o por trapecios). Todos los procedimientos que están sobre un fondo azul, se realizarán usando QGIS. Los que están sobre un fondo naranja se harán usando R. En la siguiente sección describiremos con detalle cada uno de los pasos de este flujo de trabajo.
 
@@ -93,19 +103,19 @@ En primer lugar veremos con el explorador de Windows la información que necesit
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/archivos.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/archivos.png" alt="biomes" style="zoom:55%;" />
 
 Veamos a qué corresponde cada archivo:
 
 + Todos los archivos cuyo nombre empieza por "biomas", son parte de una capa vectorial (de tipo *shapefile*). Cada uno de ellos tiene información importante. Los dos más importantes son los que se describen en la siguiente imagen. El archivo con extensión *.shp* contiene la geometría, es decir, los polígonos que representan la distribución espacial de los biomas. El archivo con extensión *.dfb* contiene la información alfanumérica asociada a cada polígono anterior. Es decir, los atributos temáticos de cada polígono. En este caso es el nombre del bioma al que pertenece cada polígono, o su superficie.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/descripcion_biomas.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/descripcion_biomas.png" alt="biomes" style="zoom:55%;" />
 
 + Los archivos con extensión *.tif* se corresponden con las capas climáticas que usaremos en la práctica: precipitación y temperatura. Se trata de capas raster en las que cada píxel tiene información sobre la variable representada. Ver siguiente figura.
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/descripcion_capas_clima.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/descripcion_capas_clima.png" alt="biomes" style="zoom:55%;" />
 
 + El archivo con extensión *.qgs* es un proyecto de QGIS del que hablaremos en el siguiente punto.
 
@@ -118,7 +128,7 @@ Veamos a qué corresponde cada archivo:
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/qgis.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/qgis.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -126,29 +136,29 @@ Has abierto un proyecto en el que hay referencias a las capas que necesitaremos 
 
 + Practica un poco con las herramientas de zoom y activar/desactivar capas.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/zoom.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/zoom.png" alt="biomes" style="zoom:55%;" />
 
 + Ahora observaremos con un poco más de detalle el mapa de los biomas de la Tierra. Sigue las instrucciones que aparecen en las siguientes imágenes.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/qgis_biomas_1.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/qgis_biomas_1.png" alt="biomes" style="zoom:55%;" />
 
 
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/qgis_biomas_2.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/qgis_biomas_2.png" alt="biomes" style="zoom:55%;" />
 
 
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/qgis_biomas_3.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/qgis_biomas_3.png" alt="biomes" style="zoom:55%;" />
 
 
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/qgis_biomas_4.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/qgis_biomas_4.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -193,7 +203,7 @@ En QGIS las capas de puntos se crean usando formato **shapefile** (el mismo form
   
     
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/puntos_1.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/puntos_1.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -201,19 +211,19 @@ En QGIS las capas de puntos se crean usando formato **shapefile** (el mismo form
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/activar_edicion.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/activar_edicion.png" alt="biomes" style="zoom:55%;" />
 
 + Ya podemos añadir puntos. Empieza haciendo zoom en la zona que quieras y sigue las instrucciones de la imagen. 
 
   
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/dibujar_puntos.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/dibujar_puntos.png" alt="biomes" style="zoom:55%;" />
 
 + Una vez que hayas dibujado todos los puntos, puedes parar la sesión de edición, tal y como se indica en la siguiente figura:
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/parar_edicion.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/parar_edicion.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -224,13 +234,13 @@ Este paso es fundamental porque nos permitirá tener, para cada punto, su valor 
 + En primer lugar, es necesario instalar un *plugin* en QGIS. Se trata de complementos o bloques de código que aportan nuevas funcionalidades al programa. Para hacer esto hemos de navegar hasta el menú *complementos -> Administrar e instalar complementos*. Esto abrirá un menú emergente en el que tecleamos "point sampling tool" (sin comillas). Lee la descripción y entenderás mejor el proceso que vamos a realizar. En la misma ventana selecciona la opción de instalar complemento. 
 + Al instalar el *plugin* aparece un nuevo botón para ejecutar la función deseada. En la siguiente figura puedes ver cómo operar con este *plugin*. La idea es inicar que la capa de puntos que hemos creado es la que contiene los puntos de muestreo (a los que asignaremos los valores de los raster). También hemos de seleccionar los campos que se añadan a la tabla de atributos de la capa de puntos (*temp* y *rain*). Es necesario seleccionar las capas rasters de la que se extraerán los datos. Hacemos click sobre los dos pulsando el botón de mayúsculas. Por último, es necesario indicar la ubicación de la tabla obtenida. Se creará una nueva capa de puntos que denominaremos "*puntos_clima*".
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/spatial_join.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/spatial_join.png" alt="biomes" style="zoom:55%;" />
 
 
 
 + La capa obtenida se carga automáticamente en QGIS. Desde un punto de vista de la geometría es igual que la que creamos en el punto **2**. Es decir, contiene los mismos puntos. Pero su tabla de atributos ahora tiene dos campos más. Uno de ellos muestra la temperatura media del punto (en décimas de grado). Y el otro muestra la precipitación total anual de dicho punto. Sigue las instrucciones de la imagen para acceder a la tabla de atributos.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/puntos_clima.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/puntos_clima.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -240,19 +250,19 @@ Queremos que cada punto de la gráfica tenga el color del bioma en el que se enc
 
 + Primero añadimos a QGIS la tabla "*lista_biomas.txt*". En ella se asigna un color a cada bioma. Las siguientes imágenes muestran cómo se hace esto en QGIS.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/lista_biomas_1.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/lista_biomas_1.png" alt="biomes" style="zoom:55%;" />
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/lista_biomas_2.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/lista_biomas_2.png" alt="biomes" style="zoom:55%;" />
 
 
 
 + Una vez incluída la tabla en el proyecto de QGIS, procedemos a realizar la unión entre la capa "*puntos_clima*" y la tabla recién agregada. Hacemos doble click sobre la capa "*puntos_clima*. Se abrirá la ventana de propiedades.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/join_1.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/join_1.png" alt="biomes" style="zoom:55%;" />
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/join_2.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/join_2.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -266,7 +276,7 @@ Como dijimos al principio, construiremos la gráfica usando R. Sabemos que tambi
 
 Para que R pueda "ver" los datos, hemos de exportarlo a un archivo de texto. Exportaremos la tabla de atributos de la nueva capa de puntos descrita anteriormente. Para ello, sigue las instrucciones de la siguiente imagen.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/exportar_tabla.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/exportar_tabla.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -274,7 +284,7 @@ Es importante que respetes los nombres de los archivos que hay en el guión. De 
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/tabla_csv.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/tabla_csv.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -288,7 +298,7 @@ Es posible usar R en un interfaz de comandos. Es decir, usando la consola. Pero 
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/rstudio.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/rstudio.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -326,11 +336,11 @@ Veamos paso a paso y con imágenes qué quiere decir este código.
 
 + Establecer el directorio de trabajo en R. Este primer paso consiste en indicarle al software dónde están los datos con los que trabajará.
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/dir_trabajo_1.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/dir_trabajo_1.png" alt="biomes" style="zoom:55%;" />
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/dir_trabajo_2.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/dir_trabajo_2.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -338,7 +348,7 @@ Veamos paso a paso y con imágenes qué quiere decir este código.
 
   
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/importa_csv.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/importa_csv.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -346,7 +356,7 @@ Veamos paso a paso y con imágenes qué quiere decir este código.
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/crea_grafica.png" alt="biomes" style="zoom:55%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/crea_grafica.png" alt="biomes" style="zoom:55%;" />
 
 
 
@@ -354,35 +364,35 @@ Veamos paso a paso y con imágenes qué quiere decir este código.
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/ejecuta_1.png" alt="biomes" style="zoom:45%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/ejecuta_1.png" alt="biomes" style="zoom:45%;" />
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/ejecuta_2.png" alt="biomes" style="zoom:50%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/ejecuta_2.png" alt="biomes" style="zoom:50%;" />
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/ejecuta_3.png" alt="biomes" style="zoom:50%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/ejecuta_3.png" alt="biomes" style="zoom:50%;" />
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/ejecuta_4.png" alt="biomes" style="zoom:50%;" />
-
-
-
-
-
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/ejecuta_5.png" alt="biomes" style="zoom:50%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/ejecuta_4.png" alt="biomes" style="zoom:50%;" />
 
 
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/ejecuta_6.png" alt="biomes" style="zoom:50%;" />
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/ejecuta_5.png" alt="biomes" style="zoom:50%;" />
 
 
 
-<img src="https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/ejecuta_7.png" alt="biomes" style="zoom:50%;" />
+
+
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/ejecuta_6.png" alt="biomes" style="zoom:50%;" />
+
+
+
+<img src="https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/ejecuta_7.png" alt="biomes" style="zoom:50%;" />
 
 
 
@@ -393,7 +403,7 @@ Veamos paso a paso y con imágenes qué quiere decir este código.
 Observa tu gráfica con detenimiento y responde a las siguientes preguntas:
 
 + ¿Crees que el resultado se ajusta a lo esperado en la gráfica teórica? Justifica tu respuesta.
-+ ¿hay algún bioma cuyos puntos estén demasiado dispersos? ¿Qué significa eso y por qué crees que ocurre?. En [este](https://github.com/Aprendiendo-ecologia/practica_biomas_clima/raw/main/downloadable_files/images/pista.png) enlace he dejado una pista que te ayudará a razonar sobre esta pregunta.
++ ¿hay algún bioma cuyos puntos estén demasiado dispersos? ¿Qué significa eso y por qué crees que ocurre?. En [este](https://github.com/Aprendiendo-cosas/P_biomas_ecologia_ccaa/raw/main/imagenes/pista.png) enlace he dejado una pista que te ayudará a razonar sobre esta pregunta.
 
 Contesta a las preguntas anteriores razonando todo lo que puedas. El objetivo es que reflexiones y uses argumentos convincentes. No hay una solución única a las preguntas, así que no te obsesiones buscando lo que yo quiero que me digas. Se trata de que aprendas mientas haces el ejercicio. 
 
