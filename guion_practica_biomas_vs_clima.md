@@ -418,3 +418,4 @@ El siguiente vídeo muestra la sesión del GM-1. La del GM-2 se grabó mal.
 
 Y el siguiente muestra el desarrollo completo de la práctica en una grabación hecha por mí a modo de tutorial:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/vr9CBeYI1bs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
