@@ -410,5 +410,11 @@ Contesta a las preguntas anteriores razonando todo lo que puedas. El objetivo es
 Deberás subir las respuestas al moodle en formato **word**, **libre office** o equivalente. No en formato **pdf**, por favor.
 
 
+## Vídeos de las sesiones
 
+El siguiente vídeo muestra la sesión del GM-1. La del GM-2 se grabó mal.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_6RNbeWjSYU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Y el siguiente muestra el desarrollo completo de la práctica en una grabación hecha por mí a modo de tutorial:
 
